@@ -49,13 +49,15 @@ print("Found PM2.5 sensor, reading data...")
 
 time1 = 0
 
+file_writer = csv.writer(file)
+file_writer.writerow(("Time", "Data"))
+file = open("PM_Ada.csv", "w", newline = None)
+import csv
+import numpy as np
+import time
+
+
 while time1 <= 10
-
-
-    file = open("PM_Ada.csv", "w", newline = None)
-
-    file_writer = csv.writer(file)
-    file_writer.writerow(("Time", "Data"))
 
     file_writer.writerow(["time1", aqdata["PM1.0standard"], aqdata["PM2.5standard"], aqdata["PM10standard"])
     time1 += 1
@@ -90,9 +92,6 @@ while time1 <= 10
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
 
-    import csv
-    import numpy as np
-    import time
 
 
 file.close()
