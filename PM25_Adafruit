@@ -78,3 +78,16 @@ while True:
     print("Particles > 5.0um / 0.1L air:", aqdata["particles 50um"])
     print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
     print("---------------------------------------")
+
+    import csv
+    import numpy as np
+
+    file = open("PM_Ada.csv", "w", newline = None)
+
+    file_writer = csv.writer(file)
+    file_writer.writerow(("Time", "Data"))
+
+    for i in range(15):
+        file_writer.writerow(["time", "PM1", "PM2.5", "PM10"])
+
+return file_writer
