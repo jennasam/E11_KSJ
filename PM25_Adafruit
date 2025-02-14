@@ -47,8 +47,10 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
+time1 = 0
+
 while time1 <= 10
-    time1 = 0
+
 
     file = open("PM_Ada.csv", "w", newline = None)
 
