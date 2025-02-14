@@ -47,7 +47,11 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
-while True:
+while time1 <= 15
+    time1 = 0
+
+    file_writer.writerow(["time1", aqdata["PM1.0standard"], aqdata["PM2.5standard"], aqdata["PM10standard"])
+    time1 += 1
     time.sleep(1)
 
     try:
@@ -87,13 +91,5 @@ while True:
 
     file_writer = csv.writer(file)
     file_writer.writerow(("Time", "Data"))
-
-time1 = 0
-
-while time1 <= 30:
-    file_writer.writerow(["time1", "PM1", "PM2.5", "PM10"])
-    time1 += 2
-    time.sleep(1)
-
 
 file.close()
