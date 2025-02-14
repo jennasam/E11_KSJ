@@ -93,8 +93,7 @@ time1 = 0
 while time1 <= 30:
     file_writer.writerow(["time1", "PM1", "PM2.5", "PM10"])
     time1 += 1
-
-time.sleep(1)
+    time.sleep(1)
 
 
 file.close()
