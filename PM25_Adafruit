@@ -57,7 +57,7 @@ import numpy as np
 import time
 
 
-for time1 in range(10)
+for time1 in range(10):
 
     file_writer.writerow(["time1", aqdata["PM1.0standard"], aqdata["PM2.5standard"], aqdata["PM10standard"])
     time.sleep(1)
