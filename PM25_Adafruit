@@ -81,13 +81,20 @@ while True:
 
     import csv
     import numpy as np
+    import time
 
     file = open("PM_Ada.csv", "w", newline = None)
 
     file_writer = csv.writer(file)
     file_writer.writerow(("Time", "Data"))
 
-    for i in range(15):
-        file_writer.writerow(["time", "PM1", "PM2.5", "PM10"])
+time1 = 0
 
-return file_writer
+while time1 <= 30:
+    file_writer.writerow(["time1", "PM1", "PM2.5", "PM10"])
+    time1 += 1
+
+time.sleep(1)
+
+
+file.close()
