@@ -57,9 +57,7 @@ time1 = 0
 
 
 while time1 <= 10:
-    file_writer.writerow("time1", aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"])
     time.sleep(1)
-    time1 += 1
 
     try:
         aqdata = pm25.read()
@@ -67,6 +65,10 @@ while time1 <= 10:
     except RuntimeError:
         print("Unable to read from sensor, retrying...")
         continue
+
+    file_writer.writerow([time1, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]])
+    time1 += 1
+
 
     print()
     print("Concentration Units (standard)")
