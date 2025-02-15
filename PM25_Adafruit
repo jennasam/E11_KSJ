@@ -47,12 +47,12 @@ pm25 = PM25_UART(uart, reset_pin)
 
 print("Found PM2.5 sensor, reading data...")
 
-file_writer = csv.writer(file)
-file_writer.writerow(("Time", "Data"))
-file = open("PM_Ada.csv", "w", newline = None)
 import csv
 import numpy as np
 import time
+file_writer = csv.writer(file)
+file_writer.writerow(("Time", "Data"))
+file = open("PM_Ada.csv", "w", newline = None)
 
 
 for time1 in range(10):
