@@ -52,7 +52,7 @@ import numpy as np
 import time
 file = open("PM_Ada.csv", "w", newline = None)
 file_writer = csv.writer(file)
-file_writer.writerow(("Time", "Data"))
+file_writer.writerow(("Time", "PM1.0", "PM2.5", "PM10"))
 time1 = 0
 
 
@@ -66,7 +66,7 @@ while time1 <= 10:
         print("Unable to read from sensor, retrying...")
         continue
 
-    file_writer.writerow([time1, aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]])
+    file_writer.writerow([time.time(), aqdata["pm10 standard"], aqdata["pm25 standard"], aqdata["pm100 standard"]])
     time1 += 1
 
 
