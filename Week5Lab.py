@@ -75,7 +75,7 @@ def combodata(time1):
         print("Particles > 10 um / 0.1L air:", aqdata["particles 100um"])
         print("---------------------------------------")
 
-        file.close()
+    file.close()
 
     return
     
