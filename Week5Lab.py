@@ -29,18 +29,13 @@ i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 bme680.sea_level_pressure = 1013.25
 
-run_time = 30
+run_time = 31
 if len(sys.argv) < 2:
   print("Script requires run_time(int) as an input")
   exit()
 else:
   run_time = int(sys.argv[1])
 
-count  = 0 
-while count < run_time:
-  print(count)
-  count +=1
-  time.sleep(1)
 
 
 def combodata(time1):
@@ -83,3 +78,5 @@ def combodata(time1):
         file.close()
 
     return
+    
+combodata(run_time)
