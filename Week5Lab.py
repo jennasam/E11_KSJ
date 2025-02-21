@@ -4,8 +4,7 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 from adafruit_pm25.i2c import PM25_I2C
 import adafruit_bme680
-import time
-import board
+import sys
 
 
 reset_pin = None
@@ -29,6 +28,20 @@ file_writer.writerow(("Time", "PM1.0", "PM2.5", "PM10", "Temp", "Gas", "Humidity
 i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 bme680.sea_level_pressure = 1013.25
+
+run_time = 30
+if len(sys.argv) < 2:
+  print("Script requires run_time(int) as an input")
+  exit()
+else:
+  run_time = int(sys.argv[1])
+
+count  = 0 
+while count < run_time:
+  print(count)
+  count +=1
+  time.sleep(1)
+
 
 def combodata(time1):
     while i <= time1:
