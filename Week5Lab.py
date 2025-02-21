@@ -27,7 +27,7 @@ file_writer = csv.writer(file)
 file_writer.writerow(("Time", "PM1.0", "PM2.5", "PM10"))
 time1 = 0
 
-
+i2c = board.I2C()
 bme680 = adafruit_bme680.Adafruit_BME680_I2C(i2c)
 bme680.sea_level_pressure = 1013.25
 
