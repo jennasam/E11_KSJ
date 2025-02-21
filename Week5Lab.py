@@ -21,7 +21,7 @@ import csv
 import numpy as np
 import time
 from datetime import datetime
-file = open("PM_Ada.csv", "w", newline = None)
+file = open("Combo_Data.csv", "w", newline = None)
 file_writer = csv.writer(file)
 file_writer.writerow(("Time", "PM1.0", "PM2.5", "PM10", "Temp", "Gas", "Humidity", "Pressure", "Altitude"))
 
