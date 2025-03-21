@@ -11,7 +11,6 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
   
-while true:
+while True:
     time.sleep(10)
 
-    
