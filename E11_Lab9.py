@@ -2,9 +2,14 @@ import RPi.GPIO as GPIO
 import datetime
 import time
  
+global count
+count = 0
+
 def my_callback(channel):
     GPIO.input(channel) == GPIO.HIGH
     print('I got an output!')
+    global count
+    count += 1
  
 
 GPIO.setmode(GPIO.BCM)
