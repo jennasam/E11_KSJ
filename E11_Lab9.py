@@ -10,9 +10,7 @@ x = 0
 cpm = 0
 
 def my_callback(channel):
-    GPIO.input(channel) == GPIO.HIGH
     global count
-    global cpm
     count += 1
     now = datetime.datetime.now()
     print(f'I got an output! The count number is {count}. The time is {now}.') 
@@ -22,12 +20,7 @@ GPIO.setup(6, GPIO.IN)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
   
 while True:
-    time.sleep(1)
-    x += 1
-    if (x % 60) == 0:
-        cpm = count
-        print(f'CPM is {cpm}')
-
-while True:
-    time.sleep(10)
-
+    time.sleep(60)
+    cpm = count
+    count = 0
+    print(f'CPM is {cpm}')
