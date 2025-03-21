@@ -5,6 +5,7 @@ import datetime
  
 global count
 global x
+global cpm
 count = 0
 x = 0
 cpm = 0
@@ -14,6 +15,7 @@ def my_callback(channel):
     GPIO.input(channel) == GPIO.HIGH
     global count
     global x
+    global cpm
     count += 1
     now = datetime.datetime.now()
     x += 1
