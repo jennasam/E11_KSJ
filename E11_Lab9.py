@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import datetime
  
 def my_callback(channel):
-    GPIO.input(channel) == GPIO.HIGH:
+    GPIO.input(channel) == GPIO.HIGH
     print('I got an output!')
  
 try:
