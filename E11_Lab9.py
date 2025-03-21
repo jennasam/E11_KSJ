@@ -14,7 +14,7 @@ def my_callback(channel):
     count += 1
     now = datetime.datetime.now()
     x += 1
-    if (x % 60) = 0:
+    if (x % 60) == 0:
         cpm = count
     print(f'I got an output! The count number is {count}. The time is {now}. CPM is {cpm}') 
 
