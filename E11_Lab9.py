@@ -1,17 +1,17 @@
 import RPi.GPIO as GPIO
 import datetime
 import time
+import datetime
  
 global count
 count = 0
 
 def my_callback(channel):
     GPIO.input(channel) == GPIO.HIGH
-    print('I got an output!')
     global count
     count += 1
-    print(f"count number is {count}") 
- 
+    now = datetime.datetime.now()
+    print(f'I got an output! The count number is {count}. The time is {now}') 
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
