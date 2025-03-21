@@ -4,7 +4,6 @@ import time
 import datetime
  
 global count
-global x
 global cpm
 count = 0
 x = 0
@@ -24,7 +23,6 @@ GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
   
 while True:
     time.sleep(1)
-    global x
     x += 1
     if (x % 60) == 0:
         cpm = count
