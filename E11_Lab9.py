@@ -10,6 +10,8 @@ def my_callback(channel):
     print('I got an output!')
     global count
     count += 1
+
+print(count)
  
 
 GPIO.setmode(GPIO.BCM)
