@@ -27,3 +27,7 @@ while True:
     if (x % 60) == 0:
         cpm = count
         print(f'CPM is {cpm}')
+
+while True:
+    time.sleep(10)
+
