@@ -2,12 +2,16 @@ import RPi.GPIO as GPIO
 import datetime
 import time
 import datetime
- 
+
 global count
 global cpm
 count = 0
 x = 0
 cpm = 0
+
+file = open("Unshielded.csv", "w", newline = None)
+file_writer = csv.writer(file)
+file_writer.writerow(("CPM", "Time"))
 
 def my_callback(channel):
     global count
@@ -24,3 +28,8 @@ while True:
     cpm = count
     count = 0
     print(f'CPM is {cpm}')
+
+
+file_writer.writerow(count, now)
+
+file.close()
