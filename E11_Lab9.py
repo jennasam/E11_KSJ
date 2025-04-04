@@ -12,7 +12,7 @@ count_per_10_seconds = 0
 
 file = open("Unshielded.csv", "w", newline = None)
 file_writer = csv.writer(file)
-file_writer.writerow(["count_per_10_seconds", "time"])
+file_writer.writerow(["Counts per 10 Seconds", "Time"])
 
 def my_callback(channel):
     global count
@@ -25,7 +25,7 @@ GPIO.setup(6, GPIO.IN)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
 
 start_time = time.time()
-end_time = start_time + 5
+end_time = start_time + 120
 
 try:
     while time.time() < end_time:
