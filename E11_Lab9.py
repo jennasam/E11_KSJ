@@ -23,18 +23,28 @@ def my_callback(channel):
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(6, GPIO.IN)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
+
+start_time = time.time()
+end_time = start_time + 120
+
+try:
+    while time.time() < end_time:
+        time.sleep(60)
+        cpm = count
+        count = 0
+        now = datetime.datetime.now()
+        print(f'CPM is {cpm}')
+        file_writer.writerow((cpm, now))
+
+except KeyboardInterrupt:
+    print("Program terminated by user.")
   
 while True:
     time.sleep(60)
     cpm = count
     count = 0
     print(f'CPM is {cpm}')
-
-time_ = 0
-
-while time_ < 15:
-    time.sleep(1)
-    time_ += 1
+        
 
 file_writer.writerow(count, now)
 
