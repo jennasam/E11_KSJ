@@ -12,7 +12,7 @@ count_per_10_seconds = 0
 
 file = open("Unshielded.csv", "w", newline = None)
 file_writer = csv.writer(file)
-file_writer.writerow(("count_per_10_seconds", "now"))
+file_writer.writerow(["count_per_10_seconds", "time"])
 
 def my_callback(channel):
     global count
@@ -34,7 +34,7 @@ try:
         count = 0
         now = datetime.datetime.now()
         print(f'Counts every ten seconds is {count_per_10_seconds}')
-        file_writer.writerow((count_per_10_seconds, now))
+        file_writer.writerow([count_per_10_seconds, now])
 
 except KeyboardInterrupt:
     print("Program terminated by user.")
