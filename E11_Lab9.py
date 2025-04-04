@@ -25,7 +25,7 @@ GPIO.setup(6, GPIO.IN)
 GPIO.add_event_detect(6, GPIO.FALLING, callback=my_callback)
 
 start_time = time.time()
-end_time = start_time + 120
+end_time = start_time + 5
 
 try:
     while time.time() < end_time:
