@@ -29,7 +29,7 @@ end_time = start_time + 120
 
 try:
     while time.time() < end_time:
-        time.sleep(60)
+        time.sleep(10)
         cpm = count
         count = 0
         now = datetime.datetime.now()
@@ -38,12 +38,7 @@ try:
 
 except KeyboardInterrupt:
     print("Program terminated by user.")
-  
-while True:
-    time.sleep(60)
-    cpm = count
-    count = 0
-    print(f'CPM is {cpm}')
+
         
 
 file_writer.writerow(count, now)
