@@ -39,5 +39,5 @@ try:
 except KeyboardInterrupt:
     print("Program terminated by user.")
 
-        
+
 file.close()
