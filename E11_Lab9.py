@@ -40,7 +40,4 @@ except KeyboardInterrupt:
     print("Program terminated by user.")
 
         
-
-file_writer.writerow(count, now)
-
 file.close()
