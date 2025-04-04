@@ -30,6 +30,11 @@ while True:
     count = 0
     print(f'CPM is {cpm}')
 
+time_ = 0
+
+while time_ < 15:
+    time.sleep(1)
+    time_ += 1
 
 file_writer.writerow(count, now)
 
