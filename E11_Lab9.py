@@ -5,14 +5,14 @@ import datetime
 import csv
 
 global count
-global cpm
+global count_per_10_seconds
 count = 0
 x = 0
-cpm = 0
+count_per_10_seconds = 0
 
 file = open("Unshielded.csv", "w", newline = None)
 file_writer = csv.writer(file)
-file_writer.writerow(("CPM", "Time"))
+file_writer.writerow(("count_per_10_seconds", "now"))
 
 def my_callback(channel):
     global count
@@ -33,7 +33,7 @@ try:
         count_per_10_seconds = count
         count = 0
         now = datetime.datetime.now()
-        print(f'CPM is {count_per_10_seconds}')
+        print(f'Counts every ten seconds is {count_per_10_seconds}')
         file_writer.writerow((count_per_10_seconds, now))
 
 except KeyboardInterrupt:
