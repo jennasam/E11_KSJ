@@ -10,7 +10,7 @@ count = 0
 x = 0
 count_per_10_seconds = 0
 
-file = open("Shielded_3Al.csv", "w", newline = None)
+file = open("Shielded_Tungsten.csv", "w", newline = None)
 file_writer = csv.writer(file)
 file_writer.writerow(["Counts per 10 Seconds", "Time"])
 
