@@ -30,11 +30,11 @@ end_time = start_time + 120
 try:
     while time.time() < end_time:
         time.sleep(10)
-        cpm = count
+        count_per_10_seconds = count
         count = 0
         now = datetime.datetime.now()
-        print(f'CPM is {cpm}')
-        file_writer.writerow((cpm, now))
+        print(f'CPM is {count_per_10_seconds}')
+        file_writer.writerow((count_per_10_seconds, now))
 
 except KeyboardInterrupt:
     print("Program terminated by user.")
