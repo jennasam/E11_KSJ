@@ -28,6 +28,3 @@ while True:
         cpm = count
         print(f'CPM is {cpm}')
 
-while True:
-    time.sleep(10)
-
